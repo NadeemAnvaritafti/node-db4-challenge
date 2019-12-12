@@ -15,7 +15,9 @@ exports.up = function(knex) {
     })
     .createTable('steps', tbl => {
         tbl.increments();
-        tbl.text('instructions')
+        tbl.integer('step_number')
+            .notNullable();
+        tbl.text('instruction')
             .notNullable();
 
         // Foreign Key
